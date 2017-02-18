@@ -9,4 +9,4 @@ OnUnitActiveSec=10m
 Unit=checkbattery.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
