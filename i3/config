@@ -292,3 +292,6 @@ exec --no-startup-id compton # enable transparancy
 exec_always pkill dunst
 exec_always --no-startup-id dunst
 
+# use pass from dmenu
+bindsym $mod+dead_circumflex exec $HOME/.config/i3/passmenu --notify
+
