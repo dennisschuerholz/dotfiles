@@ -1,0 +1,6 @@
+[Unit]
+Description=Script for checking the battery level
+
+[Service]
+Type=simple
+ExecStart=/home/dennis/.config/i3/checkbattery.sh
