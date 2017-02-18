@@ -236,9 +236,10 @@ bar {
 
 # Special keys next to the numpad
 # Lockscreen using a Windows 10 Screenshot and Windows mouse cursor
-set $lockscreen i3lock -e -i $HOME/.config/i3/lockimage.png -p win -u
+set $lockscreen $HOME/.config/i3/lockscreen.sh
 bindsym Mod4+L exec $lockscreen
 bindsym Mod1+Control+L exec $lockscreen
+exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/transfer-sleep-lock-i3lock.sh
 # Calculator
 bindsym XF86Calculator exec gnome-calculator
 # Browser
