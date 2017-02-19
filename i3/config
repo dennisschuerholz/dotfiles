@@ -60,12 +60,16 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next workspace next
 
 # move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Prior move workspace prev,workspace prev
+bindsym $mod+Shift+Next move workspace next,workspace next
 
 # split in horizontal orientation
 bindsym $mod+H split h
