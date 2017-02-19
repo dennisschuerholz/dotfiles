@@ -14,6 +14,6 @@ if [ -z $IP ]; then
   exit 33
 fi
 case $BLOCK_BUTTON in
-  [2-3]) echo "$IP" | xclip ;;
+  [2-3]) echo -n "$IP" | xclip -selection clipboard ;;
   *) echo "$IP" ;;
 esac
