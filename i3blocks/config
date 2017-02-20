@@ -93,19 +93,20 @@ interval=10
 command=$HOME/.config/i3blocks/externalip.sh
 label=
 separator=false
-interval=30
+interval=60
 
 [externalip6]
 command=$HOME/.config/i3blocks/externalip.sh
 instance=6
 label=
-interval=30
+interval=60
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
+command=$HOME/.config/i3blocks/iface.sh
 label=
 instance=enp4s0
 color=#00FF00
@@ -113,6 +114,7 @@ interval=10
 separator=false
 
 [iface]
+command=$HOME/.config/i3blocks/iface.sh
 label=
 instance=wlp3s0
 color=#00FF00

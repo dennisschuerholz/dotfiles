@@ -8,12 +8,12 @@ IP_VERSION="v4"
 if [ $BLOCK_INSTANCE -eq 6 ]; then
   IP_VERSION="v6"
 fi
-IP=$(curl -m 5 https://$IP_VERSION.ifconfig.co)
+IP=$(curl -m 10 https://$IP_VERSION.ifconfig.co)
 if [ -z $IP ]; then
   echo "no public $IP_VERSION address"
   exit 33
 fi
 case $BLOCK_BUTTON in
-  [2-3]) echo -n "$IP" | xclip -selection clipboard ;;
+  [2-3]) echo -n "$IP" | xsel -b -i ;;
   *) echo "$IP" ;;
 esac
