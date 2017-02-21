@@ -28,19 +28,6 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-[volume]
-label=VOL
-#label=♪
-instance=Master
-#instance=PCM
-interval=once
-signal=10
-
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -159,6 +146,24 @@ command=$HOME/.config/i3blocks/keycontrol.sh -c "#f5f6f7" -C "#676e7d"
 instance=NUM
 interval=once
 signal=11
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+[volume]
+command=$HOME/.config/i3blocks/volume.sh "#676e7d"
+label=♪
+separator=false
+interval=once
+signal=10
+
+[microphone]
+command=$HOME/.config/i3blocks/micmute.sh "#676e7d"
+instance=1
+interval=once
+signal=9
 
 # Battery indicator
 #
