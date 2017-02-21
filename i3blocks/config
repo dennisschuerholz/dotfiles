@@ -89,17 +89,10 @@ interval=10
 label=
 interval=10
 
-[externalip4]
+[externalip]
 command=$HOME/.config/i3blocks/externalip.sh
 label=
-separator=false
-interval=60
-
-[externalip6]
-command=$HOME/.config/i3blocks/externalip.sh
-instance=6
-label=
-interval=60
+interval=30
 
 # Network interface monitoring
 #
