@@ -79,7 +79,7 @@ interval=10
 [externalip]
 command=$HOME/.config/i3blocks/externalip.sh
 label=
-interval=30
+interval=20
 
 # Network interface monitoring
 #
@@ -179,4 +179,4 @@ interval=30
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+interval=1
