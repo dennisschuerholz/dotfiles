@@ -18,11 +18,10 @@ if [ -f $LOCKFILE ]; then
   IP_VERSION=6
 fi
 IP_FILE="/tmp/externalip.v$IP_VERSION.address"
-if [ -z `find $IP_FILE -mmin 1` ]; then
+IP_ADDRESS=`cat $IP_FILE 2>/dev/null`
+if [ -z `find $IP_FILE -mmin 1` ] || [ -z $IP_ADDRESS ]; then
   IP_ADDRESS=$(curl -m 10 https://v$IP_VERSION.ifconfig.co)
   echo "$IP_ADDRESS">$IP_FILE
-else
-  IP_ADDRESS=`cat $IP_FILE`
 fi
 if [ -z $IP_ADDRESS ]; then
   echo "no public v$IP_VERSION address"
