@@ -152,6 +152,13 @@ signal=11
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
+[backlight]
+command=$HOME/.config/i3blocks/backlight.sh
+label=
+separator=false
+interval=once
+signal=8
+
 [volume]
 command=$HOME/.config/i3blocks/volume.sh "#676e7d"
 label=♪

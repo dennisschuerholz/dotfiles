@@ -270,8 +270,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle, ex
 
 # Sreen brightness controls
 set $backlight_step 10
-bindsym XF86MonBrightnessUp exec xbacklight -inc $backlight_step # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec $backlight_step # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc $backlight_step, exec pkill -SIGRTMIN+8 i3blocks # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec $backlight_step, exec pkill -SIGRTMIN+8 i3blocks # decrease screen brightness
 
 # Touchpad controls (i don't have the key `XF86TouchpadToggle` thought)
 bindsym XF86Tools exec ~/.config/i3/toggletouchpad.sh
