@@ -58,7 +58,7 @@ interval=30
 # see the script for details.
 [cpu_usage -w 50 -c 95]
 #label=CPU:
-label=
+label=
 interval=10
 min_width= 100.00%
 separator=false
