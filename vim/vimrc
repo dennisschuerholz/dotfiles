@@ -18,9 +18,9 @@ set incsearch
 " Highlighting
 syntax on
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
+let w:xws = call('matchadd', ['ExtraWhitespace', '\s\+$'])
 highlight SquishedCommas ctermbg=red guibg=red
-match ExtraWhitespace /, \@!/
+let w:sc = call('matchadd', ['SquishedCommas', ',\s\@!\($\)\@!'])
 
 " Filetype related
 filetype plugin indent on
