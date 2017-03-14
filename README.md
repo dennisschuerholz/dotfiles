@@ -1,6 +1,7 @@
 # .files
 
 - file `compton.conf` should be linked as `~/.config/compton.conf`
+- file `latexmkrc` should be linked as `~/.latexmkrc`
 - directory `vim/after` should be linked as `~/.vim/after/`
     - file `vim/vimrc` should be linked as `~/.vimrc`
 - directory `dunst` should be linked as `~/.config/dunst/`
