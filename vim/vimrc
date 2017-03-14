@@ -1,0 +1,35 @@
+set nocompatible
+
+" Overall loock and feel
+set number
+set cursorline
+
+" Default identation and textwidth
+set colorcolumn=+1
+"set textwidth=40
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+" Search settings
+set incsearch
+
+" Highlighting
+syntax on
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+highlight SquishedCommas ctermbg=red guibg=red
+match ExtraWhitespace /, \@!/
+
+" Filetype related
+filetype plugin indent on
+
+" Vundle - Vim Bundler
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Add plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'AndrewRadev/linediff.vim'
+call vundle#end()
