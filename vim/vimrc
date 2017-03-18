@@ -20,7 +20,9 @@ syntax on
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 let w:xws = call('matchadd', ['ExtraWhitespace', '\s\+$'])
 highlight SquishedCommas ctermbg=red guibg=red
-let w:sc = call('matchadd', ['SquishedCommas', ',\s\@!\($\)\@!'])
+let w:sc = call('matchadd', ['SquishedCommas', '\d\@!,\(\s\|\d\)\@!\($\)\@!'])
+highlight UnknownPlaceholder ctermbg=red guibg=red
+let w:uph = call('matchadd', ['UnknownPlaceholder', '\([A-Z?]\)\1\+'])
 
 " Filetype related
 filetype plugin indent on
