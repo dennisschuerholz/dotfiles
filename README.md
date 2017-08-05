@@ -10,4 +10,5 @@
 - directory `rofi-power` should be linked as `~/.config/rofi-power/`
 - directory `systemd` should be linked as `~/.config/systemd/`
     - be aware, that `checkbattery.service` contains an absolute path to `checkbattery.sh`
+- directory `sieve` contains several Sieve-Mailfilter-Scripty used on various servers
 
