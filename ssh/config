@@ -1,3 +1,6 @@
+# Business
+Include business.config
+
 # GitHub.com
 Host github github.com
     Hostname github.com
