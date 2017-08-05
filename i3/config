@@ -265,8 +265,9 @@ bindsym XF86Display exec arandr
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #decrease sound volume
+
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle, exec pkill -SIGRTMIN+10 i3blocks # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle, exec pkill -SIGRTMIN+9 i3blocks # mute microphone
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle, exec pkill -SIGRTMIN+13 i3blocks # mute microphone
 
 # Sreen brightness controls
 set $backlight_step 10

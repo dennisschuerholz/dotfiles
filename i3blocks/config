@@ -101,6 +101,14 @@ color=#00FF00
 interval=10
 separator=true
 
+#[iface]
+#command=$HOME/.config/i3blocks/iface.sh
+#label=
+#instance=vpn0
+#color=#00FF00
+#interval=10
+#separator=true
+
 #[bandwidth]
 #instance=eth0
 ##interval=5
@@ -170,7 +178,7 @@ signal=10
 command=$HOME/.config/i3blocks/micmute.sh "#676e7d"
 instance=1
 interval=once
-signal=9
+signal=13
 
 # Battery indicator
 #
