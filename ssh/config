@@ -1,0 +1,87 @@
+# GitHub.com
+Host github github.com
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/github_rsa_8192
+    IdentitiesOnly yes
+
+# GitLab.com
+Host gitlab gitlab.com
+    Hostname gitlab.com
+    User git
+    IdentityFile ~/.ssh/github_rsa_8192
+    IdentitiesOnly yes
+
+# Uni Git
+Host gitlab.informatik.uni-bremen.de
+    Hostname gitlab.informatik.uni-bremen.de
+    User git
+    IdentityFile ~/.ssh/gitlab_rsa_16384
+    IdentitiesOnly yes
+
+# Janfred Git
+Host jgit git.rieckers.it
+    Hostname git.rieckers.it
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+
+# Uni SSH
+Host logi logi.zfn.uni-bremen.de
+    Hostname logi.zfn.uni-bremen.de
+    User deschuer
+    PreferredAuthentications password
+Host isidor
+    Hostname %h.informatik.uni-bremen.de
+    User root
+    IdentityFile ~/.ssh/fb3_rsa_16384
+    IdentitiesOnly yes
+Host x?? a?? login marie-public marie
+    Hostname %h.informatik.uni-bremen.de
+    User deschuer
+    IdentityFile ~/.ssh/fb3_rsa_16384
+    IdentitiesOnly yes
+Host uni
+    Hostname x11.informatik.uni-bremen.de
+Host unimac
+    Hostname a02.informatik.uni-bremen.de
+
+# StugA SSH
+Host git.stugen.de
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+Host stuga
+    Hostname stuga-int
+    User deschuer
+    LocalForward 8631 localhost:631
+Host dijkstra turing stuga-int q-web q-mail q-service gaia
+    Hostname %h.admin.stugen.de
+    User root
+    IdentityFile ~/.ssh/stuga_rsa_16384
+    IdentitiesOnly yes
+Match host="stuga?.informatik.uni-bremen.de,*.inf.stugen.de"
+    User deschuer
+    IdentityFile ~/.ssh/stuga_rsa_16384
+    IdentitiesOnly yes
+Host q
+    User root
+    Hostname %h.inf.stugen.de
+    IdentityFile ~/.ssh/stuga_rsa_16384
+    IdentitiesOnly yes
+
+# Contabo
+Match host="d,dionysos,5.189.132.155"
+    Hostname 5.189.132.155
+    User root
+    IdentityFile ~/.ssh/dionysos_rsa_16384
+    IdentitiesOnly yes
+
+Host irc
+    Hostname 5.189.132.155
+    User irssi
+    IdentityFile ~/.ssh/irssi
+    IdentitiesOnly yes
+
+Host *
+    AddKeysToAgent yes
