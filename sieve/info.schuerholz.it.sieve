@@ -11,9 +11,8 @@ elsif header :contains "List-Id" "postfixadmin-devel.lists.sourceforge.net" {
 elsif header :contains "List-Id" "ff-bremen.lists.ffhb.de" {
   fileinto "INBOX.ffhb";
 }
-elsif allof (header :contains "Subject" "[Phabricator]",
-             header :contains ["To", "Cc"] "freifunk@schuerholz.it") {
-  fileinto "INBOX.ffhb.Phabricator";
+elsif header :contains "From" "tasks@ffhb.de" {
+  fileinto "INBOX.ffhb.Tasks";
 }
 elsif header :contains "List-Id" "vereinsmitglieder.lists.ffhb.de" {
   fileinto "INBOX.ffhb.Verein";
