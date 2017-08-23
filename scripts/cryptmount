@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -eu
+
+mount_crypt() {
+    device=$1
+    mapper_name=$2
+    mountpoint=$3
+    mount_options=$4
+    if mount | grep -q $mountpoint
+    then
+        return
+    fi
+    echo "Decrypting ${mapper_name}"
+    /sbin/cryptsetup luksOpen $device $mapper_name
+    if [ -r /dev/mapper/$mapper_name ]
+    then
+        /bin/mount ${mount_options} /dev/mapper/${mapper_name} ${mountpoint}
+    else
+        echo "Could not mount $mapper_name"
+    fi
+}
+
+umount_crypt() {
+    mapper_name=$1
+    /bin/umount /dev/mapper/${mapper_name} || true
+    /sbin/cryptsetup luksClose ${mapper_name}
+}
+
+PARAM="help"
+if [ "${1+x}" ]; then
+    PARAM="$1"
+fi
+
+case "$PARAM" in
+    start)
+        mount_crypt "/dev/sda1" "backup" "/srv/backup" "-o noexec"
+    ;;
+    stop)
+        /bin/sync
+        umount_crypt "backup"
+    ;;
+    restart)
+        $0 stop
+        $0 start
+    ;;
+    *)
+        echo "$0 (start|stop)"
+    ;;
+esac

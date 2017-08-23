@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eu
+
+if mount | grep -q "/srv/backup"
+then
+    /usr/bin/rsnapshot "$@"
+else
+    echo "/srv/backup not mounted"
+    exit 1
+fi
