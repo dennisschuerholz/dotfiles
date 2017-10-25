@@ -55,9 +55,13 @@ Host git.stugen.de
     IdentityFile ~/.ssh/id_ed25519
     IdentitiesOnly yes
 Host stuga
-    Hostname stuga-int
+    Hostname stuga-int.admin.stugen.de
     User deschuer
+    IdentityFile ~/.ssh/stuga_rsa_16384
+    IdentitiesOnly yes
     LocalForward 8631 localhost:631
+Host stuga1 stuga2
+    Hostname %h.inf.stugen.de
 Host dijkstra turing stuga-int q-web q-mail q-service gaia
     Hostname %h.admin.stugen.de
     User root
@@ -84,6 +88,11 @@ Host irc
     Hostname 5.189.132.155
     User irssi
     IdentityFile ~/.ssh/irssi
+    IdentitiesOnly yes
+
+Host git.schuerholz.it
+    User git
+    IdentityFile ~/.ssh/dionysos_rsa_16384
     IdentitiesOnly yes
 
 Host *
