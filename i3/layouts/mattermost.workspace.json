@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 700,
+       "width": 1000,
+       "x": 460,
+       "y": 190
+    },
+    "name": "Mattermost-Metathemen - Beduino GitLab Mattermost",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^Mattermost$",
+       "instance": "^mattermost$"//,
+       // "title": "^Mattermost\\-Metathemen\\ \\-\\ Beduino\\ GitLab\\ Mattermost$",
+       // "transient_for": "^$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
