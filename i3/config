@@ -251,7 +251,9 @@ bar {
 # Lockscreen using a Windows 10 Screenshot and Windows mouse cursor
 set $lockscreen $HOME/.config/i3/lockscreen.sh
 bindsym Mod4+L exec $lockscreen
+bindsym Shift+Mod4+L exec xtrlock
 bindsym Mod1+Control+L exec $lockscreen
+bindsym Shift+Mod1+Control+L exec xtrlock
 exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/transfer-sleep-lock-i3lock.sh
 # Calculator
 bindsym XF86Calculator exec gnome-calculator
