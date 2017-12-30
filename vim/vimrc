@@ -27,6 +27,10 @@ let w:uph = call('matchadd', ['UnknownPlaceholder', '\([XYZ?]\)\1\+'])
 " Filetype related
 filetype plugin indent on
 
+" copy between sessions without clipboard
+vmap <leader>y :w! /tmp/vimtmp<CR>
+nmap <leader>p :r! cat /tmp/vimtmp<CR>
+
 " Vundle - Vim Bundler
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
