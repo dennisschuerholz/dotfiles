@@ -6,6 +6,7 @@
     - don't be silly, private keys missing ;D
 - directory `vim/after` should be linked as `~/.vim/after/`
     - file `vim/vimrc` should be linked as `~/.vimrc`
+- file `tmux/tmux.conf` should be linked as `~/.tmux.conf`
 - directory `dunst` should be linked as `~/.config/dunst/`
 - directory `i3` should be linked as `~/.config/i3/`
 - directory `i3blocks` should be linked as `~/.config/i3blocks/`
