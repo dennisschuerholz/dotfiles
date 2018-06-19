@@ -77,6 +77,19 @@ Host q
     IdentityFile ~/.ssh/stuga_rsa_16384
     IdentitiesOnly yes
 
+# Hetzner
+Match host="hera,hera.serv.schuerholz.it,176.9.85.178"
+    Hostname 176.9.85.178
+    User root
+    IdentityFile ~/.ssh/dionysos_rsa_16384
+    IdentitiesOnly yes
+Match host="hera-boot"
+    Hostname 176.9.85.178
+    User root
+    IdentityFile ~/.ssh/hera_boot_rsa_8192
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+
 # Contabo
 Match host="d,dionysos,5.189.132.155"
     Hostname 5.189.132.155
