@@ -86,6 +86,14 @@ interval=20
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
+command=$HOME/.config/i3blocks/iface.sh
+label=
+instance=enp0s20u1
+color=#00FF00
+interval=10
+separator=true
+
+[iface]
 command=$HOME/.config/i3blocks/iface.sh -v
 label=
 instance=enp4s0
