@@ -17,7 +17,7 @@ USE_LOCKER="false"
 LOCKER="i3lock"
 # the default LAUNCHER_OPTIONS are exported to give the possibility to add
 # custom additional options in the local configuration file
-export LAUNCHER_OPTIONS="-i -p rofi-power:"
+export LAUNCHER_OPTIONS="-i -p rofi-power"
 
 # source configuration or use default values
 if [ -f $HOME/.config/rofi-power/config ]; then
