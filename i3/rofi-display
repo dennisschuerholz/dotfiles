@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+# rofi-display
+# Use rofi to call xrandr
+
+# Dennis Schürholz in 2018 - https://dennisschuerholz.de
+
+require 'open3'
+
+LAUNCHER_OPTIONS="-i -p rofi-display"
+
+def slug(s)
+  s.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+end
+
+def entry_name(f)
+  name = ''
+  File.open(f).to_a.each do |l|
+    if l.start_with?('#name:')
+      name = l.gsub(/#name:(.*)/, '\1').strip
+    end
+  end
+  return name unless name.empty?
+  File.basename(f, '.*')
+end
+
+def entry_order(f)
+  order = ''
+  File.open(f).to_a.each do |l|
+    if l.start_with?('#order:')
+      order = l.gsub(/#order:(.*)/, '\1').strip
+    end
+  end
+  return order.to_i unless order.empty?
+  10000
+end
+
+
+layouts = {}
+Dir["#{ENV['HOME']}/.screenlayout/*.sh"].each do |f|
+  name = entry_name f
+  order = entry_order f
+  layouts[slug name] = {name: name, order: order, file: f}
+end
+
+rofi = layouts.sort_by{ |k, v| v[:order] }.map{ |l| l[1][:name] }.join "\r\n"
+result = `echo -e "#{rofi}" | rofi -dmenu -lines #{layouts.count} #{LAUNCHER_OPTIONS} | tr -d '\r\n'`
+
+unless result.nil?
+    stdout, stderr, status = Open3.capture3 layouts[slug result][:file] if layouts.keys.include?(slug result)
+    `notify-send -u low -t 30000 rofi-display "#{stderr}\nLayout-File: #{layouts[slug result][:file]}"` unless stderr.empty?
+end
+
+

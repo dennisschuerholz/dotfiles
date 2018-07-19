@@ -270,8 +270,8 @@ bindsym XF86HomePage exec firefox
 bindsym XF86MyComputer exec nautilus
 
 # Change display settings
-# will be switched to a toggling script after I created some xrandr-configs I need
-bindsym XF86Display exec arandr
+bindsym XF86Display exec $HOME/.config/i3/rofi-display
+bindsym $mod+P exec $HOME/.config/i3/rofi-display
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #increase sound volume
