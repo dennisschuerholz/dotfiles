@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Volume control using `pactl`,no need for e.g. alsamixer
-# 2017 Dennis Schürholz - https://dennisschuerholz.de
+# 2018 Dennis Schürholz - https://dennisschuerholz.de
 
-SINK=0
+SINK=`pactl list short sinks | grep RUNNING | cut -f1`
 if [ $BLOCK_INSTANCE ]; then
   SINK=$BLOCK_INSTANCE
 fi

@@ -274,11 +274,12 @@ bindsym XF86Display exec $HOME/.config/i3/rofi-display
 bindsym $mod+P exec $HOME/.config/i3/rofi-display
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #decrease sound volume
-
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle, exec pkill -SIGRTMIN+10 i3blocks # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle, exec pkill -SIGRTMIN+13 i3blocks # mute microphone
+set $sink `pactl list short sinks | grep RUNNING | cut -f1`
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -5%, exec --no-startup-id pactl set-sink-mute 0 0, exec pkill -SIGRTMIN+10 i3blocks #decrease sound volume
+#
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle, exec pkill -SIGRTMIN+10 i3blocks # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle, exec pkill -SIGRTMIN+13 i3blocks # mute microphone
 
 # Sreen brightness controls
 set $backlight_step 10
@@ -323,6 +324,8 @@ bindsym $mod+dead_circumflex exec $HOME/.config/i3/passmenu --notify
 bindsym $mod+Escape exec sm
 
 # populate workspaces
+exec --no-startup-id pasystray
+exec --no-startup-id mictray
 exec --no-startup-id nm-applet
 exec --no-startup-id $HOME/.config/i3/layouts/mail.workspace.sh $workspace1 $workspace1
 exec --no-startup-id $HOME/.config/i3/layouts/messenger.workspace.sh $workspace11 $workspace1

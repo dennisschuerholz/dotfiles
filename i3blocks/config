@@ -183,18 +183,17 @@ separator=false
 interval=once
 signal=8
 
-[volume]
-command=$HOME/.config/i3blocks/volume.sh "#676e7d"
-label=♪
-separator=false
-interval=once
-signal=10
+#[volume]
+#command=$HOME/.config/i3blocks/volume.sh "#676e7d"
+#label=♪
+#separator=false
+#interval=once
+#signal=10
 
-[microphone]
-command=$HOME/.config/i3blocks/micmute.sh "#676e7d"
-instance=1
-interval=once
-signal=13
+#[microphone]
+#command=$HOME/.config/i3blocks/micmute.sh "#676e7d"
+#interval=once
+#signal=13
 
 # Battery indicator
 #
