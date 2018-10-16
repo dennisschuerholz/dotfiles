@@ -78,7 +78,7 @@ Host q
     IdentitiesOnly yes
 
 # Hetzner
-Match host="hera,hera.serv.schuerholz.it,176.9.85.178"
+Host hera hera.serv.schuerholz.it 176.9.85.178
     Hostname 176.9.85.178
     User root
     IdentityFile ~/.ssh/dionysos_rsa_16384
@@ -89,9 +89,19 @@ Match host="hera-boot"
     IdentityFile ~/.ssh/hera_boot_rsa_8192
     IdentitiesOnly yes
     StrictHostKeyChecking no
+Host athene athene.serv.schuerholz.it 176.9.85.190
+    Hostname 176.9.85.190
+    User root
+    IdentityFile ~/.ssh/dionysos_rsa_16384
+    IdentitiesOnly yes
+
+Match host="dionysos"
+    User root
+    IdentityFile ~/.ssh/dionysos_rsa_16384
+    ProxyCommand=ssh -q -W dionysos:22 hera
 
 # Contabo
-Match host="d,dionysos,5.189.132.155"
+Match host="d,5.189.132.155"
     Hostname 5.189.132.155
     User root
     IdentityFile ~/.ssh/dionysos_rsa_16384

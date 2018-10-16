@@ -120,6 +120,14 @@ separator=true
 [iface]
 command=$HOME/.config/i3blocks/iface.sh
 label=
+instance=tun0
+color=#00FF00
+interval=10
+separator=true
+
+[iface]
+command=$HOME/.config/i3blocks/iface.sh
+label=
 instance=vpn0
 color=#00FF00
 interval=10
