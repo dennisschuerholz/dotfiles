@@ -25,7 +25,7 @@ fi
 IP_ADDRESS=`BLOCK_BUTTON=0 /usr/lib/i3blocks/iface -$IP_VERSION`
 OTHER_IP_ADDRESS=`BLOCK_BUTTON=0 /usr/lib/i3blocks/iface -$OTHER_IP_VERSION`
 if [[ -z $IP_ADDRESS || "$IP_ADDRESS" =~ ^down.* ]]; then
-  if $VERBOSE || [[ $OTHER_IP_ADDRESS ]]; then
+  if $VERBOSE || [[ $OTHER_IP_ADDRESS && ! "$OTHER_IP_ADDRESS" =~ ^down.* ]]; then
     echo "no v$IP_VERSION address"
   else
     echo ""
